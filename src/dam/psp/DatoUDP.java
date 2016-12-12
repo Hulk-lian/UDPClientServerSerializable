@@ -1,4 +1,4 @@
-package JtCode;
+package dam.psp;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -29,7 +29,7 @@ public class DatoUDP implements Serializable{
 			os = new ObjectOutputStream(bytes);
 			os.writeObject(this);
 			
-			//cerra el flujo
+			//cerrar el flujo
 			os.close();	//deberia de ser en el finally		
 		} catch (IOException e) {
 			

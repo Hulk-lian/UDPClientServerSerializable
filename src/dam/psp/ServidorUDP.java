@@ -1,6 +1,7 @@
-package JtCode;
+package dam.psp;
 
 import java.io.IOException;
+import java.io.InvalidClassException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -31,9 +32,12 @@ public class ServidorUDP {
 				System.out.println(datoRecib.cadenaTexto+System.lineSeparator()+datoRecib.cadenaNumero);
 			}
 			
-		} catch (IOException e) {
+		}catch (InvalidClassException e) {
 			e.printStackTrace();
 		}
+		 catch(IOException e){
+			 e.printStackTrace();
+		 }
 	}
 	public static void main(String[] args) {
 		new ServidorUDP();
