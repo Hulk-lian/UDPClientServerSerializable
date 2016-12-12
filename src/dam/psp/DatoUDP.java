@@ -51,7 +51,7 @@ public class DatoUDP implements Serializable{
 			is.close();
 			return datoAux;
 		} catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 		

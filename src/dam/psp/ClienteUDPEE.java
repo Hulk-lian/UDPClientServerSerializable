@@ -14,7 +14,7 @@ public class ClienteUDPEE {
 		try {
 			socket= new DatagramSocket(Constantes.PUERTO_CLIENTE,InetAddress.getByName(Constantes.HOST_CLIENTE));
 			
-			DatoUDP eldato= new DatoUDP("HandsOutOfRange",5689);
+			DatoUDP eldato= new DatoUDP("Aqui no se envian nulos",5689);
 			
 			byte[] elDatosEnBites=eldato.toByteArray();
 			

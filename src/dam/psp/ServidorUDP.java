@@ -22,18 +22,22 @@ public class ServidorUDP {
 				
 				//bloqueo a la espera de recibir conexion...
 				socket.receive(dato);
-				System.out.println("Recibido el dato de:\" "+dato.getAddress().getHostName()+" \" : ");
+				System.out.println("Recibido el dato de:\" "+dato.getAddress().getHostName()+" \" : "+
+				" del puerto: "+dato.getPort()+ " ");
+				DatoUDP datoRecib=null;
 				
-				//Deserializamos 
-				
-				DatoUDP datoRecib= DatoUDP.fromByteArray(dato.getData());
-
+				try{
+					//Deserializamos 
+					
+					datoRecib= DatoUDP.fromByteArray(dato.getData());					
+					
+				}catch (Exception e) {
+					System.out.println("Error de serialUID");
+				}
+			
 				//mostrar
 				System.out.println(datoRecib.cadenaTexto+System.lineSeparator()+datoRecib.cadenaNumero);
 			}
-			
-		}catch (InvalidClassException e) {
-			e.printStackTrace();
 		}
 		 catch(IOException e){
 			 e.printStackTrace();
